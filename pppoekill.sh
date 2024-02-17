@@ -1,8 +1,8 @@
 #!/bin/sh
-IFACE=eth9
+IFACE=eth8
 
-FILE_SESSION=/mnt/data/session
-FILE_MAC=/mnt/data/mac
+FILE_SESSION=/data/session
+FILE_MAC=/data/mac
 
 
 decho() {
@@ -70,7 +70,7 @@ while true; do
 
     echo "Got Remote MAC / Session ID: $REMOTE_MAC $SESSION_ID"
     echo PPP Link Down. Proceeding to kill.
-    python3 /mnt/data/ppp/pppoekill.py --iface $IFACE --session_id $SESSION_ID --remote_mac $REMOTE_MAC
+    python3 /data/ppp/pppoekill.py --iface $IFACE --session_id $SESSION_ID --remote_mac $REMOTE_MAC
     sleep 30
   else
     decho PPP link is up. not killing.
